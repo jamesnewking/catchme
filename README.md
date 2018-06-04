@@ -36,10 +36,10 @@ Hackathon project involving the combination of different data sources into an ap
   - Vikki Okamura
 
 - Team 3
-- Daniel Stone
-- James Wang
-- Amin Ghanimati
-- Dan Parker
+  - Daniel Stone
+  - James Wang
+  - Amin Ghanimati
+  - Dan Parker
 
 - Team 4
   - Martin Rizo
