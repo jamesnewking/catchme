@@ -7,7 +7,7 @@ Hackathon project involving the combination of different data sources into an ap
 - Must be documented loosely on JSDOC standards
 - Must be issue-managed via meistertask 
   - share the meistertask with daniel.paschal@learningfuze.com
-  - name your project 3.18 Team [your team number] Hackathon
+  - name your project 4.18 Team [your team number] Hackathon
   
 ### Additional requirement to be announced : Tuesday @ 5pm
 
