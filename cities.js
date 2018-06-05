@@ -122,3 +122,21 @@ const capitalCities = [
         longitude: 139.683333,
     },
 ]
+
+
+
+function threeCitites(capitalArray){
+    var threeCitiesArray = [];
+    var i = 0
+    while(i < 3){ 
+        var randomNum = Math.floor(capitalArray.length * Math.random()); 
+        if (threeCitiesArray.indexOf(capitalArray[randomNum])==-1){
+            console.log(randomNum);
+            threeCitiesArray.push(capitalArray[randomNum]) 
+            i++
+        }
+        
+    }
+    console.log(threeCitiesArray)
+    return threeCitiesArray;
+}
