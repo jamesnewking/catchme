@@ -125,6 +125,3 @@ const capitalCities = [
         
     }
 ]
-
-
-
