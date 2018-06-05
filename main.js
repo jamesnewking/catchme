@@ -6,6 +6,7 @@ function loadDocument(){
 };
 
 
+
 function initMap(){ 
     //map options
     var options = {
@@ -81,3 +82,4 @@ function initMap(){
             })
     }
 }  
+
