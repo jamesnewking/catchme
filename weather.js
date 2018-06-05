@@ -38,3 +38,4 @@ function darkSkyApiCallData ( getResponse ){
 function darkSkyApiError () {
     console.log(`something went wrong`);
 }  // error function to console log if something does not work right during the request
+// 
