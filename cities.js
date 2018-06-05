@@ -123,8 +123,6 @@ const capitalCities = [
     },
 ]
 
-
-
 function threeCitites(capitalArray){
     var threeCitiesArray = [];
     var i = 0
