@@ -139,12 +139,6 @@ const capitalCities = [
         latitude: 4.711111, 
         longitude: -74.072222,
     },
-    {   
-        country: 'Denmark',
-        city: 'Copenhagen',
-        latitude: 55.676111,  
-        longitude: 12.568333,
-    },
     {  
         country: 'Egypt',
         city: 'Cairo',
@@ -517,4 +511,146 @@ const capitalCities = [
         latitude: 49.6106,  
         longitude: 6.1328,
     },
+    {  
+        country: 'Kazakhstan',
+        city: 'Astana',
+        latitude: 51.166667,   
+        longitude: 71.433333,
+    },
+    {  
+        country: 'USA',
+        city: 'Anchorage',
+        latitude: 61.216667,    
+        longitude: -149.9,
+    },
+    {  
+        country: 'Croatia',
+        city: 'Dubrovnik',
+        latitude: 42.640278,   
+        longitude: 18.108333,
+    },
+    {  
+        country: 'Russia',
+        city: 'St. Petersburg',
+        latitude: 59.9375,   
+        longitude: 30.308611,
+    },
+    {  
+        country: 'USA',
+        city: 'Seattle',
+        latitude: 47.609722,   
+        longitude: -122.333056,
+    },
+    {  
+        country: 'United Kingdom',
+        city: 'Edinburgh',
+        latitude: 55.953056,   
+        longitude: -3.188889,
+    },
+    {  
+        country: 'Canada',
+        city: 'Toronto',
+        latitude: 43.7,  
+        longitude:  -79.4,
+    },
+    {  
+        country: 'Panama',
+        city: 'Panama City',
+        latitude: 8.983333,    
+        longitude: -79.516667,
+    },
+    {
+        country: 'Denmark',
+        city: 'Copenhagen',
+        latitude: 55.676111,     
+        longitude: 12.568333,
+    },
+    {
+        country: 'Cambodia',
+        city: 'Copenhagen',
+        latitude: 11.55,      
+        longitude: 104.916667,
+    },
+    {
+        country: 'Saudi Arabia',
+        city: 'Riyadh',
+        latitude: 24,      
+        longitude: 45,
+    },
+    {
+        country: 'China',
+        city: 'Shenzhen',
+        latitude: 22.55,       
+        longitude: 114.1,
+    },
+    {
+        country: 'Spain',
+        city: 'Barcelona',
+        latitude: 41.383333,        
+        longitude: 2.183333,
+    },
+    {
+        country: 'Bulgaria',
+        city: 'Sofia',
+        latitude: 42.7,      
+        longitude: 23.33,
+    },
+    {
+        country: 'Vietnam',
+        city: 'Ho Chi Minh City',
+        latitude: 10.8,        
+        longitude: 106.65,
+    },
+    {
+        country: 'Italy',
+        city: 'Milan',
+        latitude: 45.466667,        
+        longitude: 9.183333,
+    },
+    {
+        country: 'Mexico',
+        city: 'Mexico City',
+        latitude: 19.433333,       
+        longitude: -99.133333,
+    },
+    {
+        country: 'Tunisia',
+        city: 'Djerba',
+        latitude: 33.783333,       
+        longitude: 10.883333,
+    },
+    {
+        country: 'India',
+        city: 'Jaipur',
+        latitude: 26.9,      
+        longitude: 75.8,
+    },
+    {
+        country: 'USA',
+        city: 'Honolulu',
+        latitude: 21.3,       
+        longitude: -157.816667,
+    },
+    {
+        country: 'Morocco',
+        city: 'Marrakesh',
+        latitude: 31.63,      
+        longitude: -8.008889,
+    },
+    {
+        country: 'Ukraine',
+        city: 'Kiev',
+        latitude: 50.45,       
+        longitude: 30.523333,
+    },
+    {
+        country: 'Qatar',
+        city: 'Doha',
+        latitude: 25.286667,       
+        longitude: 51.533333,
+    }
+
+
+
+
 ]

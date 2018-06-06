@@ -28,7 +28,7 @@ function makeRequestForWikipedia(winningCity) {
   
         success: function (data) {
           var pageSummary = data.query.pages[pageID].extract
-          console.log('pageSummary:', pageSummary)
+          // console.log('pageSummary:', pageSummary)
           //$('.wikipedia-text').addClass('wikipedia-text-bg');
           $('#winning_text').text(pageSummary);
         }
