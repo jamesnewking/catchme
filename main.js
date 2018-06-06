@@ -64,6 +64,7 @@ function initMap() {
 
     var cities = sliceAndSplicedCities(capitalCities, 3)
 
+
         for (let capitalIndex = 0; capitalIndex < cities.length; capitalIndex++) {
             var marker = new google.maps.Marker({
                 position: {lat: cities[capitalIndex].latitude, lng: cities[capitalIndex].longitude},
