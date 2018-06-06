@@ -75,23 +75,53 @@ body {
     width: 23%;
     background: url("./Images/postcard2.jpg") no-repeat center;
     background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic-bg0, .pic-bg1, .pic-bg2, .pic-bg3 {
+    width: 85%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic-bg {
+    height: 90%;
+    width: 100%;
 }
 
 
 .image-size {
-    width: 100%;
+    width: 85%;
+    overflow: hidden;
 }
 
 .weather-section {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-bg {
+    width: 90%;
     height: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .weather-text {
-    width: 90%;
-    height: 100%;
+    border-radius: 10px;
+}
+
+.weather-text-bg {
+    background: url("./Images/postcard.jpg") no-repeat center;
+    background-size: cover;
 }
 
 .button-section {

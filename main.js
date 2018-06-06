@@ -8,11 +8,24 @@ function loadDocument(){
 };
 
 
+function insertWeatherInfo(cityInfo, hintInfo) {
+    $(".weather-text").addClass("weather-text-bg");
+    $(".weather-text").text(cityInfo + hintInfo);
+}
+
+
 function insertPicFromFlickr(photoArray){
     for (let index = 0; index < photoArray.length; index ++){
-        //let tempName = `url("${photoArray[index]}")`;
-        let tempDiv = $('<img>').attr('src',photoArray[index]).addClass('image-size');
-        let tempDivName = '.pic-' + index;
+        let tempName = `url("${photoArray[index]}")`;
+        //console.log('tempName',tempName);
+        let tempDiv = $("<div>").css("background", tempName);
+        tempDiv.css("background-repeat", "no-repeat");
+        tempDiv.css("background-size", "cover");
+        tempDiv.addClass("pic-bg");
+        //let tempDiv = $('<img>').attr('src',photoArray[index]).addClass('image-size');
+        let tempDivName = '.pic-bg' + index;
+        //console.log('tempDivName',tempDivName);
+
         $(tempDivName).append(tempDiv);
     }
 }
@@ -87,6 +100,8 @@ function initMap() {
         winningCity = cities[Math.floor(Math.random() * cities.length)];
         console.log(winningCity);
         getFlickr(winningCity.longitude,winningCity.latitude,'city');
+        makeRequestForWeather(winningCity);
+        $(".button-text").on("click", handleButtonClick);
 }
 
 function sliceAndSplicedCities(capitalArray, splicedCount){
@@ -95,8 +110,15 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
     for (var cityIndex = 0; cityIndex < splicedCount; cityIndex++) {
         var randomNum = Math.floor(Math.random() * copiedArray.length)
         threeCitiesArray.push(copiedArray[randomNum]);
+        let specificClickButton = ".button" + cityIndex;
+        $(specificClickButton).text(copiedArray[randomNum].city);
         copiedArray.splice(randomNum, 1);
     }
     return threeCitiesArray;
+}
+
+
+function handleButtonClick() {
+
 }
 

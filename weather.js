@@ -23,17 +23,19 @@ function makeRequestForWeather( capitalCities ) {
 
 function darkSkyApiCallData ( getResponse ){
     const citySummary = getResponse.currently.summary;
-    const citySummaryIcon = getResponse.currently.icon
+    const citySummaryIcon = getResponse.currently.icon;
     const cityTemp = getResponse.currently.temperature;
     const cityWind = getResponse.currently.windSpeed;
     const cityUV = getResponse.currently.uvIndex;
     const citySentence = `Currently the city is experiencing: ${citySummary}/${citySummaryIcon}.  
     The current temperature is ${cityTemp} degrees fahrenheit.  
     The wind speed is ${cityWind}.  
-    And the the city UV Index is ${cityUV}.`
+    And the the city UV Index is ${cityUV}.`;
     const cityTimeZone = getResponse.timezone;
-    const hintSentence = `The timezone in which the city is located ${cityTimeZone}`
+    const hintSentence = `The timezone in which the city is located ${cityTimeZone}`;
+    insertWeatherInfo(citySentence, hintSentence);
 }  // function to pull this specific data from the darkSkyApi get request
+
 
 function darkSkyApiError () {
     console.log(`something went wrong`);
