@@ -1,12 +1,23 @@
-$(document).ready(loadDocument);
 
+
+$(document).ready(loadDocument);
+var winningCity;
 function loadDocument(){
-    
+
 
 };
 
-var winningCity;
 
+function insertPicFromFlickr(photoArray){
+    for (let index = 0; index < photoArray.length; index ++){
+        //let tempName = `url("${photoArray[index]}")`;
+        //console.log('tempName',tempName);
+        let tempDiv = $('<img>').attr('src',photoArray[index]).addClass('image-size');
+        let tempDivName = '.pic-' + index;
+        console.log('tempDivName',tempDivName);
+        $(tempDivName).append(tempDiv);
+    }
+}
 
 // input: lon, lat, searchText;
 // output: array of 4 pictures;
@@ -34,13 +45,15 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
                 photoArray.push(picURL);
             }
             console.table(photoArray);
+            insertPicFromFlickr(photoArray);
         }
     }
     $.ajax(ajaxConfig);
     //returns an array of photo urls
+
 }
 
-function initMap(){
+function initMap() {
     //map options
     var options = {
         zoom: 2,
@@ -49,42 +62,46 @@ function initMap(){
     //creating a new map
     var gmap = new google.maps.Map(document.getElementById('theMap'), options)
 
-  addMarkerToMap(threeCitites(capitalCities));
+    var cities = sliceAndSplicedCities(capitalCities, 3)
 
-    function addMarkerToMap(capitalCityObject){
-        debugger;
-        for(let capitalIndex = 0; capitalIndex < capitalCityObject.length; capitalIndex++){
+
+        for (let capitalIndex = 0; capitalIndex < cities.length; capitalIndex++) {
             var marker = new google.maps.Marker({
-                position: {lat:capitalCityObject[capitalIndex].latitude, lng:capitalCityObject[capitalIndex].longitude},
+                position: {lat: cities[capitalIndex].latitude, lng: cities[capitalIndex].longitude},
                 map: gmap,
                 // icon: capitalCityObject.iconImg,
-                content: `<h3>${capitalCityObject[capitalIndex].city}, ${capitalCityObject[capitalIndex].country}</h3>`, 
-                })
-                var nameOnFlagClick = new google.maps.InfoWindow({
-                    content: `<h3>${capitalCityObject[capitalIndex].city}, ${capitalCityObject[capitalIndex].country}</h3>`
-                });
-                marker.addListener('click', function(){
-                    nameOnFlagClick.open(gmap, marker)
-                })
+                content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`,
+            });
+            var nameOnFlagClick = new google.maps.InfoWindow({
+                content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`
+            });
+            // marker.addListener('click', function(){
+            //     nameOnFlagClick.open(gmap, marker)
+            // });
+            google.maps.event.addListener(marker, 'click', (function (marker, capitalIndex) {
+                return function () {
+                    var nameOnFlagClick = new google.maps.InfoWindow({
+                        content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`
+                    });
+                    nameOnFlagClick.open(gmap, marker);
+                }
+            })(marker, capitalIndex));
         }
-        
-        winningCity = capitalCityObject[Math.floor(Math.random() * capitalCityObject.length)];
-    }
-   
-   
-}  
-function threeCitites(capitalArray){
+        winningCity = cities[Math.floor(Math.random() * cities.length)];
+        console.log(winningCity);
+        getFlickr(winningCity.longitude,winningCity.latitude,'city');
+}
+
+function sliceAndSplicedCities(capitalArray, splicedCount){
     var threeCitiesArray = [];
-    var i = 0
-    while(i < 3){ 
-        var randomNum = Math.floor(capitalArray.length * Math.random()); 
-        if (threeCitiesArray.indexOf(capitalArray[randomNum])==-1){
-            console.log(randomNum);
-            threeCitiesArray.push(capitalArray[randomNum]) 
-            i++
-        }
-        
+    var copiedArray = capitalArray.slice(0);
+    console.log(copiedArray)
+    for (var cityIndex = 0; cityIndex < splicedCount; cityIndex++) {
+        var randomNum = Math.floor(Math.random() * copiedArray.length)
+        threeCitiesArray.push(copiedArray[randomNum]);
+        copiedArray.splice(randomNum, 1);
     }
     console.log(threeCitiesArray)
     return threeCitiesArray;
 }
+
