@@ -1,12 +1,42 @@
 $(document).ready(loadDocument);
 
 function loadDocument(){
-    
+
+// setTimeout( function(){
+//     debugger;
+//     tempPicArray = getFlickr(winningCity.longitude,winningCity.latitude);}, 1000);
+//
+
+// setTimeout(function(){
+//     console.log('winningCity now');
+//     console.table(winningCity);
+//     debugger;
+//
+//     for (let index = 0; index < tempPicArray.length; index ++){
+//         let tempName = `url("${tempPicArray[index]}")`
+//         console.log('tempName',tempName);
+//         let tempDiv = $('<div>').css('background-img',tempName);
+//         let tempDivName = '#id' + index;
+//         console.log('tempDivName',tempDivName);
+//         $(tempDivName).append(tempDiv);
+//     }
+// },2000)
 
 };
 
 var winningCity;
 
+
+function insertPicFromFlickr(photoArray){
+    for (let index = 0; index < photoArray.length; index ++){
+        let tempName = `url("${photoArray[index]}")`
+        console.log('tempName',tempName);
+        let tempDiv = $('<div>').css('background-img',tempName);
+        let tempDivName = '#id' + index;
+        console.log('tempDivName',tempDivName);
+        $(tempDivName).append(tempDiv);
+    }
+}
 
 // input: lon, lat, searchText;
 // output: array of 4 pictures;
@@ -38,6 +68,7 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
     }
     $.ajax(ajaxConfig);
     //returns an array of photo urls
+    insertPicFromFlickr(photoArray);
 }
 
 function initMap(){
@@ -52,6 +83,9 @@ function initMap(){
     var cities = sliceAndSplicedCities(capitalCities,3)
 // addMarkerToMap();
 
+
+    function addMarkerToMap(capitalCityObject){
+        //debugger;
     for(let capitalIndex = 0; capitalIndex < cities.length; capitalIndex++){
         var marker = new google.maps.Marker({
             position: {lat:cities[capitalIndex].latitude, lng:cities[capitalIndex].longitude},
@@ -74,10 +108,7 @@ function initMap(){
             }
         })(marker, capitalIndex));
     }
-    
     winningCity = cities[Math.floor(Math.random() * cities.length)];
-   
-   
 }  
 
 function sliceAndSplicedCities(capitalArray, splicedCount){
