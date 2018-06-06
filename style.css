@@ -167,8 +167,8 @@ body {
 
 @keyframes flyPlane {
     0%      {right:0;bottom:0;transform: scale(1,1);}
-    50%     {right:35vw;bottom:35vh;transform: scale(4,4);}
-    100%    {right:110vw;bottom:110vh;transform: scale(1,1);}
+    50%     {right:35vw;bottom:40vh;transform: scale(4,4);}
+    100%    {right:110vw;bottom:120vh;transform: scale(1,1);}
 }
 
 

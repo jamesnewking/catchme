@@ -20,7 +20,7 @@ function insertPicFromFlickr(photoArray){
         //console.log('tempName',tempName);
         let tempDiv = $("<div>").css("background", tempName);
         tempDiv.css("background-repeat", "no-repeat");
-        tempDiv.css("background-size", "cover");
+        tempDiv.css("background-size", "contain");
         tempDiv.addClass("pic-bg");
         //let tempDiv = $('<img>').attr('src',photoArray[index]).addClass('image-size');
         let tempDivName = '.pic-bg' + index;
@@ -39,7 +39,7 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
     //const searchText = 'dog'; //search for this keyword from flickr
     const perPage = '4'; //number of pictures to get from flickr
     // unix timestamp of 1420070400 is 01/01/2015
-    const flickrURL = `https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apiKey}&format=json&nojsoncallback=1&text=${searchText}&min_upload_date=1420070400&safe_search=1&media=photos&lat=${lat}&lon=${lon}&per_page=${perPage}`
+    const flickrURL = `https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apiKey}&format=json&nojsoncallback=1&text=${searchText}&min_upload_date=1420070400&safe_search=1&sort=interestingness-asc&media=photos&lat=${lat}&lon=${lon}&radius=20&per_page=${perPage}`
     let ajaxConfig = {
         dataType: 'json',
         url: flickrURL,
