@@ -1,38 +1,19 @@
-$(document).ready(loadDocument);
 
+
+$(document).ready(loadDocument);
+var winningCity;
 function loadDocument(){
 
-// setTimeout( function(){
-//     debugger;
-//     tempPicArray = getFlickr(winningCity.longitude,winningCity.latitude);}, 1000);
-//
-
-// setTimeout(function(){
-//     console.log('winningCity now');
-//     console.table(winningCity);
-//     debugger;
-//
-//     for (let index = 0; index < tempPicArray.length; index ++){
-//         let tempName = `url("${tempPicArray[index]}")`
-//         console.log('tempName',tempName);
-//         let tempDiv = $('<div>').css('background-img',tempName);
-//         let tempDivName = '#id' + index;
-//         console.log('tempDivName',tempDivName);
-//         $(tempDivName).append(tempDiv);
-//     }
-// },2000)
 
 };
-
-var winningCity;
 
 
 function insertPicFromFlickr(photoArray){
     for (let index = 0; index < photoArray.length; index ++){
-        let tempName = `url("${photoArray[index]}")`
-        console.log('tempName',tempName);
-        let tempDiv = $('<div>').css('background-img',tempName);
-        let tempDivName = '#id' + index;
+        //let tempName = `url("${photoArray[index]}")`;
+        //console.log('tempName',tempName);
+        let tempDiv = $('<img>').attr('src',photoArray[index]).addClass('image-size');
+        let tempDivName = '.pic-' + index;
         console.log('tempDivName',tempDivName);
         $(tempDivName).append(tempDiv);
     }
@@ -64,14 +45,15 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
                 photoArray.push(picURL);
             }
             console.table(photoArray);
+            insertPicFromFlickr(photoArray);
         }
     }
     $.ajax(ajaxConfig);
     //returns an array of photo urls
-    insertPicFromFlickr(photoArray);
+
 }
 
-function initMap(){
+function initMap() {
     //map options
     var options = {
         zoom: 2,
@@ -80,36 +62,34 @@ function initMap(){
     //creating a new map
     var gmap = new google.maps.Map(document.getElementById('theMap'), options)
 
-    var cities = sliceAndSplicedCities(capitalCities,3)
-// addMarkerToMap();
+    var cities = sliceAndSplicedCities(capitalCities, 3)
 
-
-    function addMarkerToMap(capitalCityObject){
-        //debugger;
-    for(let capitalIndex = 0; capitalIndex < cities.length; capitalIndex++){
-        var marker = new google.maps.Marker({
-            position: {lat:cities[capitalIndex].latitude, lng:cities[capitalIndex].longitude},
-            map: gmap,
-            // icon: capitalCityObject.iconImg,
-            content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`, 
-        });
-        var nameOnFlagClick = new google.maps.InfoWindow({
-            content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`
-        });
-        // marker.addListener('click', function(){
-        //     nameOnFlagClick.open(gmap, marker)
-        // });
-        google.maps.event.addListener(marker, 'click', (function(marker, capitalIndex) {
-            return function() {
-                var nameOnFlagClick = new google.maps.InfoWindow({
-                    content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`
-                });
-                nameOnFlagClick.open(gmap, marker);
-            }
-        })(marker, capitalIndex));
-    }
-    winningCity = cities[Math.floor(Math.random() * cities.length)];
-}  
+        for (let capitalIndex = 0; capitalIndex < cities.length; capitalIndex++) {
+            var marker = new google.maps.Marker({
+                position: {lat: cities[capitalIndex].latitude, lng: cities[capitalIndex].longitude},
+                map: gmap,
+                // icon: capitalCityObject.iconImg,
+                content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`,
+            });
+            var nameOnFlagClick = new google.maps.InfoWindow({
+                content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`
+            });
+            // marker.addListener('click', function(){
+            //     nameOnFlagClick.open(gmap, marker)
+            // });
+            google.maps.event.addListener(marker, 'click', (function (marker, capitalIndex) {
+                return function () {
+                    var nameOnFlagClick = new google.maps.InfoWindow({
+                        content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`
+                    });
+                    nameOnFlagClick.open(gmap, marker);
+                }
+            })(marker, capitalIndex));
+        }
+        winningCity = cities[Math.floor(Math.random() * cities.length)];
+        console.log(winningCity);
+        getFlickr(winningCity.longitude,winningCity.latitude,'city');
+}
 
 function sliceAndSplicedCities(capitalArray, splicedCount){
     var threeCitiesArray = [];
