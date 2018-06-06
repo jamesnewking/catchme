@@ -108,7 +108,7 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
     var threeCitiesArray = [];
     var copiedArray = capitalArray.slice(0);
     for (var cityIndex = 0; cityIndex < splicedCount; cityIndex++) {
-        var randomNum = Math.floor(Math.random() * copiedArray.length)
+        var randomNum = Math.floor(Math.random() * copiedArray.length);
         threeCitiesArray.push(copiedArray[randomNum]);
         let specificClickButton = ".button" + cityIndex;
         $(specificClickButton).text(copiedArray[randomNum].city);
@@ -119,6 +119,21 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
 
 
 function handleButtonClick() {
-
+    let answerTextArray = ["Nope", "Try again", "You don't know much do you?", "Either you don't know or the photographer don't know what he doing",
+    "Take another stab at it", "Bruh...", "Nah but I want to go there", "Pfft I wish"];
+    let randomArrayIndex = Math.floor(Math.random() * answerTextArray.length);
+    let answerText = answerTextArray[randomArrayIndex];
+    if ($(this).text() === winningCity.city) {
+        $(".button-text").removeClass("btn-warning");
+        $(".button-text").addClass("btn");
+        $(this).addClass("btn-success");
+        $(".button-text").off("click");
+        $(".description-text").text("Well Done!")
+    }  else {
+        $(this).removeClass("btn-warning");
+        $(this).addClass("btn");
+        $(this).off("click");
+        $(".description-text").text(answerText);
+    }
 }
 
