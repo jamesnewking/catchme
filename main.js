@@ -104,6 +104,8 @@ function initMap() {
         getFlickr(winningCity.longitude,winningCity.latitude,'city');
         makeRequestForWeather(winningCity);
         makeRequestForWikipedia(winningCity);
+        let winShortMsg = `This is ${winningCity.city}, ${winningCity.country}.`;
+        $('#winShortMsg').text(winShortMsg);
         $(".button-text").on("click", handleButtonClick);
 }
 
@@ -135,7 +137,10 @@ function handleButtonClick() {
         $(".button-text").addClass("btn");
         $(this).addClass("btn-success");
         $(".button-text").off("click");
-        $(".description-text").text("Well Done!")
+        $(".description-text").text("Well Done!");
+
+        $('#myModal').modal('show');
+
     }  else {
         $(this).removeClass("btn-warning");
         $(this).addClass("btn");
