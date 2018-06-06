@@ -1,0 +1,81 @@
+
+body {
+    margin: 0;
+    background: url("./Images/postage.jpg") no-repeat center;
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    height: 100px;
+    width: 100vw;
+    background-color: white;
+    border: 3px solid darkgoldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-photo {
+    height: 100%;
+    width: auto;
+    left: 0;
+}
+
+.header-container {
+    height: 85%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url("./Images/postcard.jpg") no-repeat center;
+    background-size: cover;
+    border: 1px solid darkgoldenrod;
+    border-radius: 10px;
+}
+
+.title, .description {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title-text, .description-text {
+
+}
+
+.main-content {
+    width: 100vw;
+}
+
+.pic-section {
+    width: 95%;
+}
+
+.row-for-pics {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.postcard-bg {
+    height: 250px;
+    width: 38%;
+    background: url("./Images/postcard2.jpg") no-repeat center;
+    background-size: contain;
+}
+
+
+
+#theMap{
+    height: 600px;
+    width: 100%;
+}
+

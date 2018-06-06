@@ -9,10 +9,54 @@
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="cities.js"></script>
     <script src="weather.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
 
+    <div class="header">
+        <img class="header-photo" src="./Images/flag_icon2.jpg" alt="flag border background">
+        <div class="header-container">
+            <div class="title">
+                <span class="title-text">Title</span>
+            </div>
+            <div class="description">
+                <span class="description-text">Describe This Yo</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <div class="pic-section">
+            <div class="row-for-pics">
+                <div class="postcard-bg"></div>
+                <div class="postcard-bg"></div>
+            </div>
+            <div class="row-for-pics">
+                <div class="postcard-bg"></div>
+                <div class="postcard-bg"></div>
+            </div>
+        </div>
+        
+        <div class="map-section">
+            <div class="map"></div>
+        </div>
+        
+        <div class="button-section">
+            <div class="button"></div>
+            <div class="button"></div>
+            <div class="button"></div>
+            <div class="button"></div>
+        </div>
+    </div>
+
+        <h1>Map</h1>
+        <div id = 'theMap'></div>
+
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyfIduFunZW6fxzeuOL_STv1Ts66ZurOI&callback=initMap"
+        type="text/javascript"></script>
 
 
 
