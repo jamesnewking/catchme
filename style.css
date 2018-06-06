@@ -13,8 +13,6 @@ body {
 
 .header {
     height: 15%;
-
-    width: 100vw;
     background-color: transparent;
     display: flex;
     justify-content: center;
