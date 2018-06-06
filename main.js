@@ -125,7 +125,7 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
         var randomNum = Math.floor(Math.random() * copiedArray.length);
         threeCitiesArray.push(copiedArray[randomNum]);
         let specificClickButton = ".button" + cityIndex;
-        let displayText = mapLabels[cityIndex] + ') ' + copiedArray[randomNum].city;
+        let displayText = mapLabels[cityIndex] + ') ' + copiedArray[randomNum].city + ', ' + copiedArray[randomNum].country;
         $(specificClickButton).text(displayText);
         copiedArray.splice(randomNum, 1);
     }
