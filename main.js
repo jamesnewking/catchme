@@ -2,15 +2,14 @@
 
 $(document).ready(loadDocument);
 var winningCity;
+
 function loadDocument(){
-
-
 };
 
 
 function insertWeatherInfo(cityInfo, hintInfo) {
     $(".weather-text").addClass("weather-text-bg");
-    $(".weather-text").text(cityInfo + hintInfo);
+    $(".weather-text").text(cityInfo);
 }
 
 
@@ -101,6 +100,7 @@ function initMap() {
         console.log(winningCity);
         getFlickr(winningCity.longitude,winningCity.latitude,'city');
         makeRequestForWeather(winningCity);
+        makeRequestForWikipedia(winningCity);
         $(".button-text").on("click", handleButtonClick);
 }
 
