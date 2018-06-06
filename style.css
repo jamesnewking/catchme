@@ -12,8 +12,9 @@ body {
 
 .header {
     height: 15%;
-    background-color: white;
-    border: 3px solid darkgoldenrod;
+
+    width: 100vw;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,6 +24,8 @@ body {
     height: 100%;
     width: auto;
     left: 0;
+    margin-top: 1%;
+    margin-left: 1%
 }
 
 .header-container {
@@ -36,6 +39,7 @@ body {
     background-size: cover;
     border: 1px solid darkgoldenrod;
     border-radius: 10px;
+    margin: 1%;
 }
 
 .title, .description {
