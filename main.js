@@ -4,6 +4,13 @@ $(document).ready(loadDocument);
 var winningCity;
 
 function loadDocument(){
+    var airplaneSound = new Audio('audio/airplane.mp3');
+    airplaneSound.play();
+
+    // function bgMusicPlay() {
+    //     bgMusic.play();
+    // }
+
 };
 
 
