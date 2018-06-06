@@ -4,6 +4,13 @@ $(document).ready(loadDocument);
 var winningCity;
 
 function loadDocument(){
+    var airplaneSound = new Audio('audio/airplane.mp3');
+    airplaneSound.play();
+
+    // function bgMusicPlay() {
+    //     bgMusic.play();
+    // }
+
 };
 
 
@@ -118,7 +125,7 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
         var randomNum = Math.floor(Math.random() * copiedArray.length);
         threeCitiesArray.push(copiedArray[randomNum]);
         let specificClickButton = ".button" + cityIndex;
-        let displayText = mapLabels[cityIndex] + ') ' + copiedArray[randomNum].city;
+        let displayText = mapLabels[cityIndex] + ') ' + copiedArray[randomNum].city + ', ' + copiedArray[randomNum].country;
         $(specificClickButton).text(displayText);
         copiedArray.splice(randomNum, 1);
     }
@@ -135,7 +142,7 @@ function handleButtonClick() {
     let answerText = answerTextArray[randomArrayIndex];
     let buttonTextVariable = $(this).text();
     let textSliceString = buttonTextVariable.slice(3);
-    if (textSliceString === winningCity.city) {
+    if (textSliceString === `${winningCity.city}, ${winningCity.country}`) {
         $(".button-text").removeClass("btn-warning");
         $(".button-text").addClass("btn");
         $(this).addClass("btn-success");

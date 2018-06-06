@@ -2,11 +2,11 @@
 // thank you Paul & Martin for the assist!
 
 function makeRequestForWikipedia(winningCity) {
-    let city = winningCity.city
-    let country = winningCity.country
+    let city = winningCity.city;
+    let country = winningCity.country;
     let pageTitle = null;
     let pageID = null;
-    const urlSearchStr = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch="+city+'%'+country+"&format=json&srprop=snippet";
+    const urlSearchStr = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch="+city+"&format=json&srprop=snippet";
     let descrSearchStr = null;
   
     $.ajax({
