@@ -52,7 +52,8 @@ function initMap(){
   addMarkerToMap(threeCitites(capitalCities));
 
     function addMarkerToMap(capitalCityObject){
-        for(var capitalIndex = 0; capitalIndex < capitalCityObject.length; capitalIndex++){
+        debugger;
+        for(let capitalIndex = 0; capitalIndex < capitalCityObject.length; capitalIndex++){
             var marker = new google.maps.Marker({
                 position: {lat:capitalCityObject[capitalIndex].latitude, lng:capitalCityObject[capitalIndex].longitude},
                 map: gmap,
