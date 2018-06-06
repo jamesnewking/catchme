@@ -27,7 +27,7 @@ function darkSkyApiCallData ( getResponse ){
     const cityTemp = getResponse.currently.temperature;
     const cityWind = getResponse.currently.windSpeed;
     const cityUV = getResponse.currently.uvIndex;
-    const citySentence = `Currently the city is experiencing: ${citySummary}/${citySummaryIcon}.  
+    const citySentence = `Currently the city is experiencing: ${citySummaryIcon}.  
     The current temperature is ${cityTemp} degrees fahrenheit.  
     The wind speed is ${cityWind}.  
     And the the city UV Index is ${cityUV}.`;

@@ -175,3 +175,28 @@ body {
 @media screen and (max-width: 420px) {
 
 }
+
+.wikipedia-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wikipedia-bg {
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wikipedia-text {
+    border-radius: 10px;
+}
+
+.wikipedia-text-bg {
+    background: url("./Images/postcard.jpg") no-repeat center;
+    background-size: cover;
+}
