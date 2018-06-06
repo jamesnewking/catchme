@@ -1,7 +1,7 @@
 
 body {
     margin: 0;
-    background: url("./Images/postage.jpg") no-repeat center;
+    background: url("./Images/OldMapBackground.jpg") no-repeat center;
     background-size: cover;
     height: 100vh;
     font-family: 'Gloria Hallelujah', cursive;
@@ -35,9 +35,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url("./Images/postcard.jpg") no-repeat center;
+   /*
+ background: url("./Images/postcard.jpg") no-repeat center;
+ border: 1px solid darkgoldenrod;
+   */
+   background-color: transparent;
     background-size: cover;
-    border: 1px solid darkgoldenrod;
+    
     border-radius: 10px;
     margin: 1%;
 }
@@ -117,10 +121,14 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url("./Images/postcard.jpg") no-repeat center;
+    /*
+background: url("./Images/postcard.jpg") no-repeat center;
+border: 2px solid darkgoldenrod;
+    */
+    
     background-size: cover;
     border-radius: 10px;
-    border: 2px solid darkgoldenrod;
+    
 }
 
 
