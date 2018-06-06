@@ -2,8 +2,8 @@
 // thank you Paul & Martin for the assist!
 
 function makeRequestForWikipedia(winningCity) {
-    let city = winningCity.city
-    let country = winningCity.country
+    let city = winningCity.city;
+    let country = winningCity.country;
     let pageTitle = null;
     let pageID = null;
     const urlSearchStr = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch="+city+'%'+country+"&format=json&srprop=snippet";
@@ -27,8 +27,8 @@ function makeRequestForWikipedia(winningCity) {
         dataType: 'jsonp',
   
         success: function (data) {
-          var pageSummary = data.query.pages[pageID].extract
-          console.log('pageSummary:', pageSummary)
+          var pageSummary = data.query.pages[pageID].extract;
+          console.log('pageSummary:', pageSummary);
           //$('.wikipedia-text').addClass('wikipedia-text-bg');
           $('#winning_text').text(pageSummary);
         }
