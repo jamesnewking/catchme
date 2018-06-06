@@ -4,6 +4,7 @@ body {
     background: url("./Images/postage.jpg") no-repeat center;
     background-size: cover;
     height: 100vh;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 * {
@@ -16,6 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .header-photo {
@@ -47,10 +49,12 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 2em;
+    
 }
 
 .title-text, .description-text {
-
+    
 }
 
 .main-content {
