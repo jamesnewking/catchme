@@ -44,8 +44,8 @@ const capitalCities = [
         longitude: 14.416667,
     },
     {   continent: 'Europe',
-        country: 'London',
-        city: 'United Kingdom',
+        country: 'United Kingdom',
+        city: 'London',
         latitude: 51.507222, 
         longitude: -0.1275,
     },
@@ -120,8 +120,5 @@ const capitalCities = [
         city: 'Tokyo',
         latitude: 35.683333, 
         longitude: 139.683333,
-    },
-    {
-        
     }
 ]
