@@ -78,7 +78,7 @@ body {
 .postcard-bg {
     height: auto;
     width: 23%;
-    background: url("./Images/postcard2.jpg") no-repeat center;
+    background: url("./Images/airmail.png") no-repeat center;
     background-size: contain;
     display: flex;
     justify-content: center;
