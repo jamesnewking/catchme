@@ -120,8 +120,5 @@ const capitalCities = [
         city: 'Tokyo',
         latitude: 35.683333, 
         longitude: 139.683333,
-    },
-    {
-        
     }
 ]
