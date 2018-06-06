@@ -11,10 +11,8 @@ function loadDocument(){
 function insertPicFromFlickr(photoArray){
     for (let index = 0; index < photoArray.length; index ++){
         //let tempName = `url("${photoArray[index]}")`;
-        //console.log('tempName',tempName);
         let tempDiv = $('<img>').attr('src',photoArray[index]).addClass('image-size');
         let tempDivName = '.pic-' + index;
-        console.log('tempDivName',tempDivName);
         $(tempDivName).append(tempDiv);
     }
 }
@@ -27,13 +25,13 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
     const apiKey = 'aafae43be950e495d55bfe4055fde6e4';
     //const searchText = 'dog'; //search for this keyword from flickr
     const perPage = '4'; //number of pictures to get from flickr
-    const flickrURL = `https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apiKey}&format=json&nojsoncallback=1&text=${searchText}&min_upload_date=1514764800&safe_search=1&media=photos&lat=${lat}&lon=${lon}&per_page=${perPage}`
+    // unix timestamp of 1420070400 is 01/01/2015
+    const flickrURL = `https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apiKey}&format=json&nojsoncallback=1&text=${searchText}&min_upload_date=1420070400&safe_search=1&media=photos&lat=${lat}&lon=${lon}&per_page=${perPage}`
     let ajaxConfig = {
         dataType: 'json',
         url: flickrURL,
         success: function(result) {
             rawFlickrData = result.photos.photo;
-            console.table(rawFlickrData);
             for (let index = 0; index < rawFlickrData.length; index++){
                 const farmId = rawFlickrData[index].farm;
                 const serverId = rawFlickrData[index].server;
@@ -44,7 +42,6 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
                 //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
                 photoArray.push(picURL);
             }
-            console.table(photoArray);
             insertPicFromFlickr(photoArray);
         }
     }
@@ -95,13 +92,11 @@ function initMap() {
 function sliceAndSplicedCities(capitalArray, splicedCount){
     var threeCitiesArray = [];
     var copiedArray = capitalArray.slice(0);
-    console.log(copiedArray)
     for (var cityIndex = 0; cityIndex < splicedCount; cityIndex++) {
         var randomNum = Math.floor(Math.random() * copiedArray.length)
         threeCitiesArray.push(copiedArray[randomNum]);
         copiedArray.splice(randomNum, 1);
     }
-    console.log(threeCitiesArray)
     return threeCitiesArray;
 }
 
