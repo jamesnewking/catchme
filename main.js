@@ -106,6 +106,7 @@ function initMap() {
         makeRequestForWikipedia(winningCity);
         let winShortMsg = `This is ${winningCity.city}, ${winningCity.country}.`;
         $('#winShortMsg').text(winShortMsg);
+        $('#myModal').on('click',function(){location.reload()});
         $(".button-text").on("click", handleButtonClick);
 }
 
