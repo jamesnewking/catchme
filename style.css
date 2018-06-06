@@ -4,7 +4,7 @@ body {
     background: url("./Images/postage.jpg") no-repeat center;
     background-size: cover;
     height: 100vh;
-    width: 100vw;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 * {
@@ -13,18 +13,19 @@ body {
 
 .header {
     height: 15%;
-    width: 100vw;
-    background-color: white;
-    border: 3px solid darkgoldenrod;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .header-photo {
     height: 100%;
     width: auto;
     left: 0;
+    margin-top: 1%;
+    margin-left: 1%
 }
 
 .header-container {
@@ -38,6 +39,7 @@ body {
     background-size: cover;
     border: 1px solid darkgoldenrod;
     border-radius: 10px;
+    margin: 1%;
 }
 
 .title, .description {
@@ -47,14 +49,15 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 2em;
+    
 }
 
 .title-text, .description-text {
-
+    
 }
 
 .main-content {
-    width: 100vw;
     height: 85%;
     display: flex;
     flex-direction: column;
@@ -110,21 +113,17 @@ body {
 
 .weather-bg {
     width: 90%;
-    height: 50px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.weather-text {
-    border-radius: 10px;
-}
-
-.weather-text-bg {
     background: url("./Images/postcard.jpg") no-repeat center;
     background-size: cover;
+    border-radius: 10px;
+    border: 2px solid darkgoldenrod;
 }
+
 
 .button-section {
     width: 100%;
@@ -141,7 +140,9 @@ body {
 }
 
 .button-text {
-    border: 1px solid darkgoldenrod;
+    height: 90%;
+    width: 60%;
+    border: 2px solid darkblue;
 }
 
 .map-section {
@@ -155,6 +156,7 @@ body {
     height: 300px;
     width: 90%;
     border-radius: 10px;
+    border: 2px solid darkgoldenrod;
 }
 
 .plane{

@@ -67,7 +67,7 @@ function initMap() {
     var options = {
         zoom: 2,
         //center: {lat: 40.416775, lng: -3.703790},
-        center: {lat: 19.334968, lng: -31.423304},
+        center: {lat: 16, lng: 8},
         mapTypeId: 'hybrid'
     }
     //creating a new map
