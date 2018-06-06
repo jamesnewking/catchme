@@ -67,24 +67,27 @@ function initMap() {
     //map options
     var options = {
         zoom: 2,
-        center: {lat: 40.416775, lng: -3.703790}
+        //center: {lat: 40.416775, lng: -3.703790},
+        center: {lat: 19.334968, lng: -31.423304},
+        mapTypeId: 'hybrid'
     }
     //creating a new map
     var gmap = new google.maps.Map(document.getElementById('theMap'), options)
 
-    var cities = sliceAndSplicedCities(capitalCities, 3)
-
+    var cities = sliceAndSplicedCities(capitalCities, 3);
+    let mapLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
         for (let capitalIndex = 0; capitalIndex < cities.length; capitalIndex++) {
             var marker = new google.maps.Marker({
                 position: {lat: cities[capitalIndex].latitude, lng: cities[capitalIndex].longitude},
                 map: gmap,
+                label: mapLabels[capitalIndex],
                 // icon: capitalCityObject.iconImg,
                 content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`,
             });
-            var nameOnFlagClick = new google.maps.InfoWindow({
-                content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`
-            });
+            // var nameOnFlagClick = new google.maps.InfoWindow({
+            //     content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`
+            // });
             // marker.addListener('click', function(){
             //     nameOnFlagClick.open(gmap, marker)
             // });
@@ -106,12 +109,14 @@ function initMap() {
 
 function sliceAndSplicedCities(capitalArray, splicedCount){
     var threeCitiesArray = [];
+    let mapLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var copiedArray = capitalArray.slice(0);
     for (var cityIndex = 0; cityIndex < splicedCount; cityIndex++) {
         var randomNum = Math.floor(Math.random() * copiedArray.length)
         threeCitiesArray.push(copiedArray[randomNum]);
         let specificClickButton = ".button" + cityIndex;
-        $(specificClickButton).text(copiedArray[randomNum].city);
+        let displayText = mapLabels[cityIndex] + ') ' + copiedArray[randomNum].city;
+        $(specificClickButton).text(displayText);
         copiedArray.splice(randomNum, 1);
     }
     return threeCitiesArray;
