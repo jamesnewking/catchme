@@ -5,9 +5,9 @@
 //  how to pull from darksky api
 //  https://api.darksky.net/forecast/[key]/[latitude],[longitude]
 
-function makeRequestForWeather( capitalCities, index ) {
-    var currentCityLat = capitalCities[index].latitude;
-    var currentCityLon = capitalCities[index].longitude;
+function makeRequestForWeather( capitalCities ) {
+    var currentCityLat = capitalCities.latitude;
+    var currentCityLon = capitalCities.longitude;
     var formattedLatLon = `${currentCityLat},${currentCityLon}`;
     var darkSkyApi = {
         url: `https://api.darksky.net/forecast/a7794c8b625563c07d784f703310aef9/${formattedLatLon}`,
