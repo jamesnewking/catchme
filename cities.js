@@ -121,4 +121,7 @@ const capitalCities = [
         latitude: 35.683333, 
         longitude: 139.683333,
     },
+    {
+        
+    }
 ]
