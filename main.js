@@ -128,7 +128,9 @@ function handleButtonClick() {
     "Take another stab at it", "Bruh...", "Nah but I want to go there", "Pfft I wish"];
     let randomArrayIndex = Math.floor(Math.random() * answerTextArray.length);
     let answerText = answerTextArray[randomArrayIndex];
-    if ($(this).text() === winningCity.city) {
+    let buttonTextVariable = $(this).text();
+    let textSliceString = buttonTextVariable.slice(3);
+    if (textSliceString === winningCity.city) {
         $(".button-text").removeClass("btn-warning");
         $(".button-text").addClass("btn");
         $(this).addClass("btn-success");
