@@ -125,7 +125,9 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
 
 function handleButtonClick() {
     let answerTextArray = ["Nope", "Try again", "You don't know much do you?", "Either you don't know or the photographer don't know what he doing",
-    "Take another stab at it", "Bruh...", "Nah but I want to go there", "Pfft I wish"];
+    "Take another stab at it", "Bruh...", "Nah but I want to go there", "I wish", "Did you fail 8th grade geography?",
+    "You're not even trying are you?", "Guess what.....you're wrong",
+    "No sir", "No mam", "Beautiful photos. Oh btw you're wrong", "Geographically challenged indeed"];
     let randomArrayIndex = Math.floor(Math.random() * answerTextArray.length);
     let answerText = answerTextArray[randomArrayIndex];
     let buttonTextVariable = $(this).text();

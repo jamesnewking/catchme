@@ -43,18 +43,17 @@ body {
 }
 
 .title, .description {
-    width: 50%;
+    width: 100%;
     height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 2em;
-    
 }
 
-.title-text, .description-text {
-    
+.description {
+    font-size: 1.5em;
 }
 
 .main-content {
