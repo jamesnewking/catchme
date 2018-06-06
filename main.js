@@ -142,7 +142,7 @@ function handleButtonClick() {
     let answerText = answerTextArray[randomArrayIndex];
     let buttonTextVariable = $(this).text();
     let textSliceString = buttonTextVariable.slice(3);
-    if (textSliceString === winningCity.city) {
+    if (textSliceString === `${winningCity.city}, ${winningCity.country}`) {
         $(".button-text").removeClass("btn-warning");
         $(".button-text").addClass("btn");
         $(this).addClass("btn-success");
