@@ -339,7 +339,7 @@ const capitalCities = [
     },
     {  
         country: 'Malawi',
-        city: 'Lilongue',
+        city: 'Lilongwe',
         latitude: -13.983333, 
         longitude: 33.783333,
     },
