@@ -156,12 +156,13 @@ border: 2px solid darkgoldenrod;
     width: 100%;
     display: flex;
     justify-content: center;
+    height: 42%;
 }
 
 
 #theMap{
-    height: 300px;
-    width: 90%;
+    height: 114%;
+    width: 80%;
     border-radius: 10px;
     border: 2px solid darkgoldenrod;
 }
