@@ -1,8 +1,10 @@
 
 body {
     margin: 0;
-    background: url("./Images/postage.jpg") no-repeat center;
+    background: url("./Images/OldMapBackground.jpg") no-repeat center;
     background-size: cover;
+    height: 100vh;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 * {
@@ -10,19 +12,20 @@ body {
 }
 
 .header {
-    height: 100px;
-    width: 100vw;
-    background-color: white;
-    border: 3px solid darkgoldenrod;
+    height: 15%;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .header-photo {
     height: 100%;
     width: auto;
     left: 0;
+    margin-top: 1%;
+    margin-left: 1%
 }
 
 .header-container {
@@ -32,50 +35,172 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url("./Images/postcard.jpg") no-repeat center;
+    background-color: transparent;
     background-size: cover;
-    border: 1px solid darkgoldenrod;
     border-radius: 10px;
+    margin: 1%;
 }
 
 .title, .description {
-    width: 50%;
+    width: 100%;
     height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+}
+
+.description {
+    font-size: 1.5em;
+}
+
+.main-content {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pic-section {
+    width: 100%;
+    height: 29%;
+}
+
+.row-for-pics {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.postcard-bg {
+    height: auto;
+    width: 23%;
+    background: url("./Images/airmail.png") no-repeat center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic-bg0, .pic-bg1, .pic-bg2, .pic-bg3 {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic-bg {
+    height: 21vmin;
+    width: 28vmin;
+}
+
+
+.image-size {
+    width: 85%;
+    overflow: hidden;
+}
+
+.weather-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-bg {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+
+.button-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    height: 50px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-text {
+    height: 90%;
+    width: 85%;
+    border: 2px solid darkblue;
+}
+
+.map-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 42%;
+}
+
+#theMap{
+    height: 114%;
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid darkgoldenrod;
+}
+
+.plane{
+    position: fixed;
+    height: 20vh;
+    width: 20vw;
+    background-image: url("images/Plane_9_transparent_background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: flyPlane 3s;
+}
+
+@keyframes flyPlane {
+    0%      {right:0;bottom:0;transform: scale(1,1);}
+    50%     {right:35vw;bottom:40vh;transform: scale(4,4);}
+    100%    {right:110vw;bottom:120vh;transform: scale(1,1);}
+}
+
+@media screen and (max-width: 420px) {
+
+}
+
+.wikipedia-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wikipedia-bg {
+    width: 90%;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.title-text, .description-text {
-
+.wikipedia-text {
+    border-radius: 10px;
 }
 
-.main-content {
-    width: 100vw;
+.wikipedia-text-bg {
+    background: url("./Images/postcard.jpg") no-repeat center;
+    background-size: cover;
 }
 
-.pic-section {
-    width: 95%;
+.modal-title {
+    font-weight: bold;
+    color: white;
 }
-
-.row-for-pics {
-    display: flex;
-    justify-content: center;
-    margin-top: 3%;
-}
-
-.postcard-bg {
-    height: 250px;
-    width: 38%;
-    background: url("./Images/postcard2.jpg") no-repeat center;
-    background-size: contain;
-}
-
-
-
-#theMap{
-    height: 600px;
-    width: 100%;
-}
-

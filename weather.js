@@ -4,10 +4,9 @@
 
 //  how to pull from darksky api
 //  https://api.darksky.net/forecast/[key]/[latitude],[longitude]
-
-function makeRequestForWeather( capitalCities, index ) {
-    var currentCityLat = capitalCities[index].latitude;
-    var currentCityLon = capitalCities[index].longitude;
+function makeRequestForWeather( capitalCities ) {
+    var currentCityLat = capitalCities.latitude;
+    var currentCityLon = capitalCities.longitude;
     var formattedLatLon = `${currentCityLat},${currentCityLon}`;
     var darkSkyApi = {
         url: `https://api.darksky.net/forecast/a7794c8b625563c07d784f703310aef9/${formattedLatLon}`,
@@ -23,16 +22,17 @@ function makeRequestForWeather( capitalCities, index ) {
 
 function darkSkyApiCallData ( getResponse ){
     const citySummary = getResponse.currently.summary;
-    const citySummaryIcon = getResponse.currently.icon
+    const citySummaryIcon = getResponse.currently.icon;
     const cityTemp = getResponse.currently.temperature;
     const cityWind = getResponse.currently.windSpeed;
     const cityUV = getResponse.currently.uvIndex;
-    const citySentence = `Currently the city is experiencing: ${citySummary}/${citySummaryIcon}.  
+    const citySentence = `Currently the city is experiencing: ${citySummaryIcon}.  
     The current temperature is ${cityTemp} degrees fahrenheit.  
     The wind speed is ${cityWind}.  
-    And the the city UV Index is ${cityUV}.`
+    And the the city UV Index is ${cityUV}.`;
     const cityTimeZone = getResponse.timezone;
-    const hintSentence = `The timezone in which the city is located ${cityTimeZone}`
+    const hintSentence = `The timezone in which the city is located ${cityTimeZone}`;
+    insertWeatherInfo(citySentence, hintSentence);
 }  // function to pull this specific data from the darkSkyApi get request
 
 function darkSkyApiError () {

@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Where am I?</title>
+    <title>Catch Me If You Can</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="images/plane_icon.png" type="image/png" >
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="cities.js"></script>
     <script src="weather.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="wikipedia.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <script src="main.js"></script>
 </head>
 <body>
 
     <div class="header">
-        <img class="header-photo" src="./Images/flag_icon2.jpg" alt="flag border background">
+        <img class="header-photo" src="./Images/flag-globe-spin2.gif" alt="flag border background">
         <div class="header-container">
             <div class="title">
-                <span class="title-text">Title</span>
+                <span class="title-text">Catch Me If You Can</span>
             </div>
             <div class="description">
-                <span class="description-text">Describe This Yo</span>
+                <span class="description-text">Here are a few photos from my travels, guess where I was...</span>
             </div>
         </div>
     </div>
@@ -30,37 +35,77 @@
     <div class="main-content">
         <div class="pic-section">
             <div class="row-for-pics">
-                <div class="postcard-bg"></div>
-                <div class="postcard-bg"></div>
-            </div>
-            <div class="row-for-pics">
-                <div class="postcard-bg"></div>
-                <div class="postcard-bg"></div>
+                <div class="postcard-bg pic-0">
+                    <div class="pic-bg0"></div>
+                </div>
+                <div class="postcard-bg pic-1">
+                    <div class="pic-bg1"></div>
+                </div>
+                <div class="postcard-bg pic-2">
+                    <div class="pic-bg2"></div>
+                </div>
+                <div class="postcard-bg pic-3">
+                    <div class="pic-bg3"></div>
+                </div>
             </div>
         </div>
-        
-        <div class="map-section">
-            <div class="map"></div>
+
+
+        <div class="weather-section">
+            <div class="weather-bg">
+                <span class="weather-text"></span>
+            </div>
         </div>
-        
+
+
         <div class="button-section">
-            <div class="button"></div>
-            <div class="button"></div>
-            <div class="button"></div>
-            <div class="button"></div>
+            <div class="button">
+                <button class="button-text btn btn-warning button0">City 1</button>
+            </div>
+            <div class="button">
+                <button class="button-text btn btn-warning button1">City 2</button>
+            </div>
+            <div class="button">
+                <button class="button-text btn btn-warning button2">City 3</button>
+            </div>
+        </div>
+
+
+        <div class="map-section">
+            <div id = 'theMap'></div>
+
+
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyfIduFunZW6fxzeuOL_STv1Ts66ZurOI&callback=initMap"
+            type="text/javascript"></script>
+        </div>
+
+        <div class="wikipedia-section">
+            <div class="wikipedia-bg">
+                <span class="wikipedia-text"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="plane"></div>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content wikipedia-text-bg">
+                <div class="modal-header">
+                    <h4 class="modal-title">Correct! Here's what I learned:</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="winning_text"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Catch me again?</button>
+                </div>
+            </div>
+
         </div>
     </div>
-
-        <h1>Map</h1>
-        <div id = 'theMap'></div>
-
-
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyfIduFunZW6fxzeuOL_STv1Ts66ZurOI&callback=initMap"
-        type="text/javascript"></script>
-
-
-
-
 
 </body>
 </html>
