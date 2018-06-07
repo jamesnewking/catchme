@@ -89,21 +89,36 @@
     <div class="plane"></div>
 
     <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg" id="modalContent">
 
             <!-- Modal content-->
-            <div class="modal-content wikipedia-text-bg">
-                <div class="modal-header">
-                    <h4 class="modal-title">Correct! Here's what I learned:</h4>
+            <div class="row">
+                <div class="col-md-1 col-lg-1"></div>
+                <div class="modal-content wikipedia-text-bg col-md-5 col-lg-5">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Correct! Here's what I learned:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="winning_text"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Catch me again?</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <div id="winning_text"></div>
+                <div class="col-md-1 col-lg-1"></div>
+                <div class="modal-content wikipedia-text-bg col-md-4 col-lg-4">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Here's what I ate:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="nomNomPics0"></div>
+                        <div id="nomNomPics1"></div>
+                        <div id="nomNomPics2"></div>
+                        <div id="nomNomPics3"></div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Catch me again?</button>
-                </div>
-            </div>
 
+            </div>
         </div>
     </div>
 

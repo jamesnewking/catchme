@@ -204,3 +204,14 @@ body {
     font-weight: bold;
     color: white;
 }
+
+#modalContent{
+    max-width: 100vw;
+}
+
+div#nomNomPics0, div#nomNomPics1, div#nomNomPics2, div#nomNomPics3 {
+    height: 30vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*background-image: url("images/Cup-Noodles.jpg"); */
+}
