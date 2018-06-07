@@ -27,7 +27,7 @@ function insertPicFromFlickr(photoArray){
 
 // input: lon, lat, searchText;
 // output: array of 4 pictures;
-function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
+function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog',forMap=true){
     let photoArray = [];
     let rawFlickrData;
     const apiKey = 'aafae43be950e495d55bfe4055fde6e4';
@@ -48,9 +48,15 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
                 const picURL = `https:\/\/farm${farmId}.staticflickr.com\/${serverId}\/${flickrId}_${flickrSecret}.jpg`;
                 //this is the format of the flickr picture
                 //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-                photoArray.push(picURL);
+                if (forMap){photoArray.push(picURL);}
+                    else {
+                        debugger;
+                        let tempName = `url("${picURL}")`;
+                        let divName = `#nomNomPics${index}`;
+                        $(divName).css("background", tempName);
+                }
             }
-            insertPicFromFlickr(photoArray);
+            if (forMap){insertPicFromFlickr(photoArray);}
         }
     }
     $.ajax(ajaxConfig);
@@ -89,6 +95,7 @@ function initMap() {
         winningCity = cities[Math.floor(Math.random() * cities.length)];
         console.log(winningCity);
         getFlickr(winningCity.longitude,winningCity.latitude,'city');
+        getFlickr(winningCity.longitude,winningCity.latitude,'food',false);
         makeRequestForWeather(winningCity);
         makeRequestForWikipedia(winningCity);
         let winShortMsg = `This is ${winningCity.city}, ${winningCity.country}.`;
