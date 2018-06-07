@@ -1,37 +1,26 @@
 
-
 $(document).ready(loadDocument);
 var winningCity;
 
 function loadDocument(){
     var airplaneSound = new Audio('audio/airplane.mp3');
     airplaneSound.play();
-
-    // function bgMusicPlay() {
-    //     bgMusic.play();
-    // }
-
 };
-
 
 function insertWeatherInfo(cityInfo, hintInfo) {
     $(".weather-text").addClass("weather-text-bg");
     $(".weather-text").text(cityInfo);
 }
 
-
 function insertPicFromFlickr(photoArray){
     for (let index = 0; index < photoArray.length; index ++){
         let tempName = `url("${photoArray[index]}")`;
-        //console.log('tempName',tempName);
         let tempDiv = $("<div>").css("background", tempName);
         tempDiv.css("background-repeat", "no-repeat");
         tempDiv.css("background-size", "contain");
         tempDiv.addClass("pic-bg");
         //let tempDiv = $('<img>').attr('src',photoArray[index]).addClass('image-size');
         let tempDivName = '.pic-bg' + index;
-        //console.log('tempDivName',tempDivName);
-
         $(tempDivName).append(tempDiv);
     }
 }
@@ -66,7 +55,6 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
     }
     $.ajax(ajaxConfig);
     //returns an array of photo urls
-
 }
 
 function initMap() {
@@ -79,10 +67,8 @@ function initMap() {
     }
     //creating a new map
     var gmap = new google.maps.Map(document.getElementById('theMap'), options)
-
     var cities = sliceAndSplicedCities(capitalCities, 3);
     let mapLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
         for (let capitalIndex = 0; capitalIndex < cities.length; capitalIndex++) {
             var marker = new google.maps.Marker({
                 position: {lat: cities[capitalIndex].latitude, lng: cities[capitalIndex].longitude},
@@ -91,12 +77,6 @@ function initMap() {
                 // icon: capitalCityObject.iconImg,
                 content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`,
             });
-            // var nameOnFlagClick = new google.maps.InfoWindow({
-            //     content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`
-            // });
-            // marker.addListener('click', function(){
-            //     nameOnFlagClick.open(gmap, marker)
-            // });
             google.maps.event.addListener(marker, 'click', (function (marker, capitalIndex) {
                 return function () {
                     var nameOnFlagClick = new google.maps.InfoWindow({
@@ -132,7 +112,6 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
     return threeCitiesArray;
 }
 
-
 function handleButtonClick() {
     let answerTextArray = ["Nope", "Try again", "You don't know much do you?", "Either you don't know or the photographer don't know what he doing",
     "Take another stab at it", "Bruh...", "Nah but I want to go there", "I wish", "Did you fail 8th grade geography?",
@@ -148,9 +127,7 @@ function handleButtonClick() {
         $(this).addClass("btn-success");
         $(".button-text").off("click");
         $(".description-text").text("Well Done!");
-
         $('#myModal').modal('show');
-
     }  else {
         $(this).removeClass("btn-warning");
         $(this).addClass("btn");

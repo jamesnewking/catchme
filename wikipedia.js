@@ -1,6 +1,5 @@
 // api from wikipedia
 // thank you Paul & Martin for the assist!
-
 function makeRequestForWikipedia(winningCity) {
     let city = winningCity.city;
     let country = winningCity.country;
@@ -12,7 +11,6 @@ function makeRequestForWikipedia(winningCity) {
     $.ajax({
       url: urlSearchStr,
       dataType: 'jsonp',
-  
       success: function getPageTitle(data) {
         pageTitle = data.query.search[0].title;
         pageID = data.query.search[0].pageid;
@@ -25,7 +23,6 @@ function makeRequestForWikipedia(winningCity) {
       $.ajax({
         url: descrSearchStr,
         dataType: 'jsonp',
-  
         success: function (data) {
           var pageSummary = data.query.pages[pageID].extract
           // console.log('pageSummary:', pageSummary)

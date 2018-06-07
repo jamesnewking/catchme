@@ -4,7 +4,6 @@
 
 //  how to pull from darksky api
 //  https://api.darksky.net/forecast/[key]/[latitude],[longitude]
-
 function makeRequestForWeather( capitalCities ) {
     var currentCityLat = capitalCities.latitude;
     var currentCityLon = capitalCities.longitude;
@@ -35,7 +34,6 @@ function darkSkyApiCallData ( getResponse ){
     const hintSentence = `The timezone in which the city is located ${cityTimeZone}`;
     insertWeatherInfo(citySentence, hintSentence);
 }  // function to pull this specific data from the darkSkyApi get request
-
 
 function darkSkyApiError () {
     console.log(`something went wrong`);
