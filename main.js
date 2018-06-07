@@ -72,7 +72,7 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
 function initMap() {
     //map options
     var options = {
-        zoom: 2,
+        zoom: 2.3,
         //center: {lat: 40.416775, lng: -3.703790},
         center: {lat: 16, lng: 8},
         mapTypeId: 'hybrid'
