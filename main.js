@@ -134,6 +134,8 @@ function handleButtonClick() {
         $(".button-text").off("click");
         $(".description-text").text("Well Done!");
         $('#myModal').modal('show');
+        let sayCityCountry = `I was at ${winningCity.city} ${winningCity.country}`;
+        responsiveVoice.speak(sayCityCountry); //https://responsivevoice.org/
     }  else {
         $(this).removeClass("btn-warning");
         $(this).addClass("btn");
