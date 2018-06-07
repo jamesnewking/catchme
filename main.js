@@ -50,10 +50,9 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog',forMap=t
                 //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
                 if (forMap){photoArray.push(picURL);}
                     else {
-                        debugger;
                         let tempName = `url("${picURL}")`;
                         let divName = `#nomNomPics${index}`;
-                        $(divName).css("background", tempName);
+                        $(divName).css("background-image", tempName); //don't use only 'background'
                 }
             }
             if (forMap){insertPicFromFlickr(photoArray);}
