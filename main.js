@@ -4,7 +4,7 @@ var winningCity;
 
 function loadDocument(){
     var airplaneSound = new Audio('audio/airplane.mp3');
-    //airplaneSound.play();
+    airplaneSound.play();
 };
 
 function insertWeatherInfo(cityInfo, hintInfo) {
