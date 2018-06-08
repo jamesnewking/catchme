@@ -113,6 +113,10 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
         let specificClickButton = ".button" + cityIndex;
         let displayText = mapLabels[cityIndex] + ') ' + copiedArray[randomNum].city + ', ' + copiedArray[randomNum].country;
         $(specificClickButton).text(displayText);
+        $(specificClickButton).mouseover(function(){
+            responsiveVoice.speak(displayText);
+            $(specificClickButton).off('mouseover');
+            }); //https://responsivevoice.org/
         copiedArray.splice(randomNum, 1);
     }
     return threeCitiesArray;
