@@ -51,11 +51,11 @@ body {
 }
 
 .title-text {
-    font-size: 150%;
+    font-size: 4vmin;
 }
 
 .description-text {
-    font-size: 125%;
+    font-size: 3vmin;
 }
 
 .main-content {
@@ -121,7 +121,10 @@ body {
     text-align: center;
     background-size: cover;
     border-radius: 10px;
-    
+}
+
+.weather-text {
+    font-size: 3vmin;
 }
 
 .button-section {
@@ -139,6 +142,7 @@ body {
 }
 
 .button-text {
+    font-size: 3vmin;
     height: 90%;
     width: 85%;
     border: 2px solid darkblue;
