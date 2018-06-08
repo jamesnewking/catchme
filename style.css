@@ -48,11 +48,14 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 2em;
 }
 
-.description {
-    font-size: 1.5em;
+.title-text {
+    font-size: 150%;
+}
+
+.description-text {
+    font-size: 125%;
 }
 
 .main-content {
