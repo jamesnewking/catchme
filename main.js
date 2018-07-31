@@ -1,10 +1,24 @@
 
 $(document).ready(loadDocument);
 var winningCity;
+var muteVol = 1;
 
 function loadDocument(){
+
+    $('.material-icons').on('click',function(){
+        if($('.material-icons').text()==='volume_up'){
+            $('.material-icons').text('volume_off');
+            muteVol = 0;
+            airplaneSound.volume = 0.0;
+        } else { $('.material-icons').text('volume_up');
+            muteVol = 1;
+            airplaneSound.volume = 1.0;
+            }
+    });
     var airplaneSound = new Audio('audio/airplane.mp3');
+
     airplaneSound.play();
+
 };
 
 function insertWeatherInfo(cityInfo, hintInfo) {
@@ -114,7 +128,8 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
         let displayText = mapLabels[cityIndex] + ') ' + copiedArray[randomNum].city + ', ' + copiedArray[randomNum].country;
         $(specificClickButton).text(displayText);
         $(specificClickButton).mouseover(function(){
-            responsiveVoice.speak(displayText);
+            console.log(muteVol);
+            responsiveVoice.speak(displayText,"UK English Female", {volume: muteVol});
             $(specificClickButton).off('mouseover');
             }); //https://responsivevoice.org/
         copiedArray.splice(randomNum, 1);
@@ -139,7 +154,8 @@ function handleButtonClick() {
         $(".description-text").text("Well Done!");
         $('#myModal').modal('show');
         let sayCityCountry = `I was at ${winningCity.city} ${winningCity.country}`;
-        responsiveVoice.speak(sayCityCountry); //https://responsivevoice.org/
+
+        responsiveVoice.speak(sayCityCountry, "UK English Female", {volume: muteVol}); //https://responsivevoice.org/
     }  else {
         $(this).removeClass("btn-warning");
         $(this).addClass("btn");

@@ -11,6 +11,10 @@ body {
     box-sizing: border-box;
 }
 
+.mute {
+    font-family: "Arial Unicode MS";
+}
+
 .header {
     height: 15%;
     background-color: transparent;
@@ -51,7 +55,9 @@ body {
 }
 
 .title-text {
+    font-family: Garamond;
     font-size: 4vmin;
+    font-weight: bolder;
 }
 
 .description-text {
