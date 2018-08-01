@@ -567,7 +567,7 @@ const capitalCities = [
     },
     {
         country: 'Cambodia',
-        city: 'Copenhagen',
+        city: 'Phnom Penh',
         latitude: 11.55,      
         longitude: 104.916667,
     },

@@ -4,7 +4,6 @@ var winningCity;
 var muteVol = 1;
 
 function loadDocument(){
-
     $('.material-icons').on('click',function(){
         if($('.material-icons').text()==='volume_up'){
             $('.material-icons').text('volume_off');
@@ -26,26 +25,29 @@ function insertWeatherInfo(cityInfo, hintInfo) {
     $(".weather-text").text(cityInfo);
 }
 
+function fillUpPhotoArray(photoArray){
+    if (photoArray.length<4){
+        photoArray.push('./Images/airmail.png');
+        fillUpPhotoArray(photoArray);
+    }
+
+}
+
 function insertPicFromFlickr(photoArray){
+    fillUpPhotoArray(photoArray);
     for (let index = 0; index < photoArray.length; index ++){
-        let tempName = `url("${photoArray[index]}")`;
-        let tempDiv = $("<div>").css("background", tempName);
-        tempDiv.css("background-repeat", "no-repeat");
-        tempDiv.css("background-size", "contain");
-        tempDiv.addClass("pic-bg");
-        //let tempDiv = $('<img>').attr('src',photoArray[index]).addClass('image-size');
-        let tempDivName = '.pic-bg' + index;
-        $(tempDivName).append(tempDiv);
+        let tempDivName = '#pic' + index;
+        $(tempDivName).attr('src',photoArray[index]);
+        console.log(photoArray[index]);
     }
 }
 
 // input: lon, lat, searchText;
 // output: array of 4 pictures;
-function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog',forMap=true){
+function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'food',forMap=true){
     let photoArray = [];
     let rawFlickrData;
     const apiKey = 'aafae43be950e495d55bfe4055fde6e4';
-    //const searchText = 'dog'; //search for this keyword from flickr
     const perPage = '4'; //number of pictures to get from flickr
     // unix timestamp of 1420070400 is 01/01/2015
     const flickrURL = `https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apiKey}&format=json&nojsoncallback=1&text=${searchText}&min_upload_date=1420070400&safe_search=1&sort=interestingness-asc&media=photos&lat=${lat}&lon=${lon}&radius=20&per_page=${perPage}`
@@ -154,7 +156,6 @@ function handleButtonClick() {
         $(".description-text").text("Well Done!");
         $('#myModal').modal('show');
         let sayCityCountry = `I was at ${winningCity.city} ${winningCity.country}`;
-
         responsiveVoice.speak(sayCityCountry, "UK English Female", {volume: muteVol}); //https://responsivevoice.org/
     }  else {
         $(this).removeClass("btn-warning");
