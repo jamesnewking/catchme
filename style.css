@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: url("./Images/OldMapBackground.jpg") repeat center;
+    background: url("./images/OldMapBackground.jpg") repeat center;
     background-size: cover;
     height: 100vh;
     font-family: 'Gloria Hallelujah', cursive;
@@ -122,7 +122,7 @@ body {
 }
 
 .wikipedia-text-bg {
-    background: url("./Images/postcard.jpg") no-repeat center;
+    background: url("./images/postcard.jpg") no-repeat center;
     background-size: cover;
 }
 
