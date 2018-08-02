@@ -27,7 +27,7 @@ function insertWeatherInfo(cityInfo, hintInfo) {
 
 function fillUpPhotoArray(photoArray){
     if (photoArray.length<4){
-        photoArray.push('./Images/airmail.png');
+        photoArray.push('./images/airmail.png');
         fillUpPhotoArray(photoArray);
     }
 
