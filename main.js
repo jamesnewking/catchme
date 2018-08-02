@@ -38,7 +38,6 @@ function insertPicFromFlickr(photoArray){
     for (let index = 0; index < photoArray.length; index ++){
         let tempDivName = '#pic' + index;
         $(tempDivName).attr('src',photoArray[index]);
-        console.log(photoArray[index]);
     }
 }
 
@@ -130,7 +129,6 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
         let displayText = mapLabels[cityIndex] + ') ' + copiedArray[randomNum].city + ', ' + copiedArray[randomNum].country;
         $(specificClickButton).text(displayText);
         $(specificClickButton).mouseover(function(){
-            console.log(muteVol);
             responsiveVoice.speak(displayText,"UK English Female", {volume: muteVol});
             $(specificClickButton).off('mouseover');
             }); //https://responsivevoice.org/
