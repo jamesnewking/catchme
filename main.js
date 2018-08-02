@@ -1,10 +1,23 @@
 
 $(document).ready(loadDocument);
 var winningCity;
+var muteVol = 1;
 
 function loadDocument(){
+    $('.material-icons').on('click',function(){
+        if($('.material-icons').text()==='volume_up'){
+            $('.material-icons').text('volume_off');
+            muteVol = 0;
+            airplaneSound.volume = 0.0;
+        } else { $('.material-icons').text('volume_up');
+            muteVol = 1;
+            airplaneSound.volume = 1.0;
+            }
+    });
     var airplaneSound = new Audio('audio/airplane.mp3');
+
     airplaneSound.play();
+
 };
 
 function insertWeatherInfo(cityInfo, hintInfo) {
@@ -12,26 +25,29 @@ function insertWeatherInfo(cityInfo, hintInfo) {
     $(".weather-text").text(cityInfo);
 }
 
+function fillUpPhotoArray(photoArray){
+    if (photoArray.length<4){
+        photoArray.push('./Images/airmail.png');
+        fillUpPhotoArray(photoArray);
+    }
+
+}
+
 function insertPicFromFlickr(photoArray){
+    fillUpPhotoArray(photoArray);
     for (let index = 0; index < photoArray.length; index ++){
-        let tempName = `url("${photoArray[index]}")`;
-        let tempDiv = $("<div>").css("background", tempName);
-        tempDiv.css("background-repeat", "no-repeat");
-        tempDiv.css("background-size", "contain");
-        tempDiv.addClass("pic-bg");
-        //let tempDiv = $('<img>').attr('src',photoArray[index]).addClass('image-size');
-        let tempDivName = '.pic-bg' + index;
-        $(tempDivName).append(tempDiv);
+        let tempDivName = '#pic' + index;
+        $(tempDivName).attr('src',photoArray[index]);
+        console.log(photoArray[index]);
     }
 }
 
 // input: lon, lat, searchText;
 // output: array of 4 pictures;
-function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
+function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'food',forMap=true){
     let photoArray = [];
     let rawFlickrData;
     const apiKey = 'aafae43be950e495d55bfe4055fde6e4';
-    //const searchText = 'dog'; //search for this keyword from flickr
     const perPage = '4'; //number of pictures to get from flickr
     // unix timestamp of 1420070400 is 01/01/2015
     const flickrURL = `https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apiKey}&format=json&nojsoncallback=1&text=${searchText}&min_upload_date=1420070400&safe_search=1&sort=interestingness-asc&media=photos&lat=${lat}&lon=${lon}&radius=20&per_page=${perPage}`
@@ -48,9 +64,14 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'dog'){
                 const picURL = `https:\/\/farm${farmId}.staticflickr.com\/${serverId}\/${flickrId}_${flickrSecret}.jpg`;
                 //this is the format of the flickr picture
                 //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-                photoArray.push(picURL);
+                if (forMap){photoArray.push(picURL);}
+                    else {
+                        let tempName = `url("${picURL}")`;
+                        let divName = `#nomNomPics${index}`;
+                        $(divName).css("background-image", tempName); //don't use only 'background'
+                }
             }
-            insertPicFromFlickr(photoArray);
+            if (forMap){insertPicFromFlickr(photoArray);}
         }
     }
     $.ajax(ajaxConfig);
@@ -89,6 +110,7 @@ function initMap() {
         winningCity = cities[Math.floor(Math.random() * cities.length)];
         console.log(winningCity);
         getFlickr(winningCity.longitude,winningCity.latitude,'city');
+        getFlickr(winningCity.longitude,winningCity.latitude,'food',false);
         makeRequestForWeather(winningCity);
         makeRequestForWikipedia(winningCity);
         let winShortMsg = `This is ${winningCity.city}, ${winningCity.country}.`;
@@ -107,6 +129,11 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
         let specificClickButton = ".button" + cityIndex;
         let displayText = mapLabels[cityIndex] + ') ' + copiedArray[randomNum].city + ', ' + copiedArray[randomNum].country;
         $(specificClickButton).text(displayText);
+        $(specificClickButton).mouseover(function(){
+            console.log(muteVol);
+            responsiveVoice.speak(displayText,"UK English Female", {volume: muteVol});
+            $(specificClickButton).off('mouseover');
+            }); //https://responsivevoice.org/
         copiedArray.splice(randomNum, 1);
     }
     return threeCitiesArray;
@@ -128,6 +155,8 @@ function handleButtonClick() {
         $(".button-text").off("click");
         $(".description-text").text("Well Done!");
         $('#myModal').modal('show');
+        let sayCityCountry = `I was at ${winningCity.city} ${winningCity.country}`;
+        responsiveVoice.speak(sayCityCountry, "UK English Female", {volume: muteVol}); //https://responsivevoice.org/
     }  else {
         $(this).removeClass("btn-warning");
         $(this).addClass("btn");

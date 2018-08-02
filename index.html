@@ -14,96 +14,139 @@
     <script src="cities.js"></script>
     <script src="weather.js"></script>
     <script src="wikipedia.js"></script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua" rel="stylesheet">
     <script src="main.js"></script>
 </head>
 <body>
 
-    <div class="header">
-        <img class="header-photo" src="./Images/flag-globe-spin2.gif" alt="flag border background">
-        <div class="header-container">
-            <div class="title">
-                <span class="title-text">Catch Me If You Can</span>
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-xs-1 col-md-2 ">
+                <img class="header-photo" src="./Images/flag-globe-spin2.gif" alt="flag border background">
             </div>
-            <div class="description">
-                <span class="description-text">Here are a few photos from my travels, guess where I was...</span>
+            <div class="offset-xs-2 col-xs-6 offset-sm-1 col-sm-6 offset-md-1 col-md-6 ">
+                <div class="row center"><span class="title-text">Catch Me If You Can</span></div>
+                <div class="row center"><span class="description-text">Here are a few photos from my travels, guess where I was...</span></div>
+            </div>
+            <div class="offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 ">
+                <button type="button" class="vol btn btn-default btn-sm">
+                    <!--<i class="material-icons">volume_off</i>-->
+                    <i class="material-icons">volume_up</i>
+                </button>
             </div>
         </div>
     </div>
 
-
-    <div class="main-content">
-        <div class="pic-section">
-            <div class="row-for-pics">
-                <div class="postcard-bg pic-0">
-                    <div class="pic-bg0"></div>
+    <div class="container-fluid">
+        <!--https://getbootstrap.com/docs/4.0/components/carousel/-->
+        <div class="row">
+            <div class="postcard col-lg-4">
+                <img class="image-size" src="./Images/airmail.png" alt="postcard" >
+            </div>
+            <div id="carouselFlickr" class="carousel slide col-xs-12 offset-md-2 col-md-8 offset-lg-0 col-lg-4" data-ride="carousel" data-interval="2000">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselFlickr" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselFlickr" data-slide-to="1"></li>
+                    <li data-target="#carouselFlickr" data-slide-to="2"></li>
+                    <li data-target="#carouselFlickr" data-slide-to="3"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="row">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active center">
+                            <img class="image-size " id='pic0' alt="Pic 0" >
+                        </div>
+                        <div class="carousel-item center">
+                            <img class="image-size " id='pic1' alt="Pic 1" >
+                        </div>
+                        <div class="carousel-item center">
+                            <img class="image-size " id='pic2' alt="Pic 2" >
+                        </div>
+                        <div class="carousel-item center">
+                            <img class="image-size " id='pic3' alt="Pic 3" >
+                        </div>
+                    </div>
                 </div>
-                <div class="postcard-bg pic-1">
-                    <div class="pic-bg1"></div>
-                </div>
-                <div class="postcard-bg pic-2">
-                    <div class="pic-bg2"></div>
-                </div>
-                <div class="postcard-bg pic-3">
-                    <div class="pic-bg3"></div>
-                </div>
+                <a class="carousel-control-prev" href="#carouselFlickr" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselFlickr" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="postcard col-lg-4">
+                <img class="image-size" src="./Images/airmail.png" alt="postcard" >
             </div>
         </div>
-
-
-        <div class="weather-section">
-            <div class="weather-bg">
-                <span class="weather-text"></span>
-            </div>
-        </div>
-
-
-        <div class="button-section">
-            <div class="button">
-                <button class="button-text btn btn-warning button0">City 1</button>
-            </div>
-            <div class="button">
-                <button class="button-text btn btn-warning button1">City 2</button>
-            </div>
-            <div class="button">
-                <button class="button-text btn btn-warning button2">City 3</button>
-            </div>
-        </div>
-
-
-        <div class="map-section">
-            <div id = 'theMap'></div>
-
-
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyfIduFunZW6fxzeuOL_STv1Ts66ZurOI&callback=initMap"
-            type="text/javascript"></script>
-        </div>
-
-        <div class="wikipedia-section">
-            <div class="wikipedia-bg">
-                <span class="wikipedia-text"></span>
-            </div>
-        </div>
-
     </div>
+
+    <div class="row">
+        <div class="weather-bg col-sm-12">
+            <span class="weather-text"></span>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- button-section -->
+            <button class="col-sm-12 col-md-4 button-text btn btn-warning button0">City 1</button>
+            <button class="col-sm-12 col-md-4 button-text btn btn-warning button1">City 2</button>
+            <button class="col-sm-12 col-md-4 button-text btn btn-warning button2">City 3</button>
+        </div>
+    </div>
+
+    <div class="map-section">
+        <div id = 'theMap'></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyfIduFunZW6fxzeuOL_STv1Ts66ZurOI&callback=initMap"
+        type="text/javascript"></script>
+    </div>
+
+    <!--<div class="wikipedia-section">-->
+        <!--<div class="wikipedia-bg">-->
+            <!--<span class="wikipedia-text"></span>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
     <div class="plane"></div>
 
     <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg" id="modalContent">
 
             <!-- Modal content-->
-            <div class="modal-content wikipedia-text-bg">
-                <div class="modal-header">
-                    <h4 class="modal-title">Correct! Here's what I learned:</h4>
+            <div class="row">
+                <div class="col-md-1 col-lg-1"></div>
+                <div class="modal-content wikipedia-text-bg col-md-5 col-lg-5">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Correct! Here's what I learned:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="winning_text"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Catch me again?</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <div id="winning_text"></div>
+                <div class="col-md-1 col-lg-1"></div>
+                <div class="modal-content wikipedia-text-bg col-md-4 col-lg-4">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Here's more from my experience:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="nomNomPics0"></div>
+                        <div id="nomNomPics1"></div>
+                        <div id="nomNomPics2"></div>
+                        <div id="nomNomPics3"></div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Catch me again?</button>
-                </div>
-            </div>
 
+            </div>
         </div>
     </div>
 
