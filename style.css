@@ -15,6 +15,7 @@ body {
 }
 
 .header {
+    margin-top: 1.5em;
     height: 6em;
     margin-bottom: 2em;
 }
@@ -24,7 +25,7 @@ body {
 }
 
 .title-text {
-    font-family: Garamond;
+    font-family: "Modern Antiqua", Garamond;
     font-size: 2em;
     font-weight: bolder;
 }
@@ -146,7 +147,14 @@ div#nomNomPics0, div#nomNomPics1, div#nomNomPics2, div#nomNomPics3 {
     .header-photo {
         display: none;
     }
+
     .postcard {
         display: none;
+    }
+
+    .vol {
+        position: fixed;
+        top: 0;
+        right: 1em;
     }
 }
