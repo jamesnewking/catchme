@@ -572,12 +572,6 @@ const capitalCities = [
         longitude: 104.916667,
     },
     {
-        country: 'Saudi Arabia',
-        city: 'Riyadh',
-        latitude: 24,      
-        longitude: 45,
-    },
-    {
         country: 'China',
         city: 'Shenzhen',
         latitude: 22.55,       
