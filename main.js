@@ -80,14 +80,15 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'food',forMap=
 function initMap() {
     //map options
     var options = {
-        zoom: 2.3,
+        //zoom: 2.3,
         //center: {lat: 40.416775, lng: -3.703790},
-        center: {lat: 16, lng: 8},
+        //center: {lat: 16, lng: 8},
         mapTypeId: 'hybrid'
     }
     //creating a new map
     var gmap = new google.maps.Map(document.getElementById('theMap'), options)
     var cities = sliceAndSplicedCities(capitalCities, 3);
+    var bounds = new google.maps.LatLngBounds(); //try to fit
     let mapLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         for (let capitalIndex = 0; capitalIndex < cities.length; capitalIndex++) {
             var marker = new google.maps.Marker({
@@ -97,6 +98,7 @@ function initMap() {
                 // icon: capitalCityObject.iconImg,
                 content: `<h3>${cities[capitalIndex].city}, ${cities[capitalIndex].country}</h3>`,
             });
+            bounds.extend(marker.position); //try to fit
             google.maps.event.addListener(marker, 'click', (function (marker, capitalIndex) {
                 return function () {
                     var nameOnFlagClick = new google.maps.InfoWindow({
@@ -108,6 +110,7 @@ function initMap() {
         }
         winningCity = cities[Math.floor(Math.random() * cities.length)];
         console.log(winningCity);
+        gmap.fitBounds(bounds); //try to fit
         getFlickr(winningCity.longitude,winningCity.latitude,'city');
         getFlickr(winningCity.longitude,winningCity.latitude,'food',false);
         makeRequestForWeather(winningCity);
