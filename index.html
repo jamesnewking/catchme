@@ -43,10 +43,7 @@
     <div class="container-fluid">
         <!--https://getbootstrap.com/docs/4.0/components/carousel/-->
         <div class="row">
-            <div class="postcard col-lg-4">
-                <img class="image-size" src="./images/airmail.png" alt="postcard" >
-            </div>
-            <div id="carouselFlickr" class="carousel slide col-xs-12 offset-md-2 col-md-8 offset-lg-0 col-lg-4" data-ride="carousel" data-interval="2000">
+            <div id="carouselFlickr" class="carousel slide col-xs-12 offset-md-2 col-md-8 offset-lg-0 col-lg-6" data-ride="carousel" data-interval="2000">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#carouselFlickr" data-slide-to="0" class="active"></li>
@@ -80,8 +77,12 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <div class="postcard col-lg-4">
-                <img class="image-size" src="./images/airmail.png" alt="postcard" >
+            <div class="postcard col-lg-6">
+                <div class="map-section">
+                    <div id = 'theMap'></div>
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyfIduFunZW6fxzeuOL_STv1Ts66ZurOI&callback=initMap"
+                            type="text/javascript"></script>
+                </div>
             </div>
         </div>
     </div>
@@ -101,11 +102,7 @@
         </div>
     </div>
 
-    <div class="map-section">
-        <div id = 'theMap'></div>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyfIduFunZW6fxzeuOL_STv1Ts66ZurOI&callback=initMap"
-        type="text/javascript"></script>
-    </div>
+
 
     <!--<div class="wikipedia-section">-->
         <!--<div class="wikipedia-bg">-->
