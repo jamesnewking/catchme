@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: url("./Images/OldMapBackground.jpg") repeat center;
+    background: url("./images/OldMapBackground.jpg") repeat center;
     background-size: cover;
     height: 100vh;
     font-family: 'Gloria Hallelujah', cursive;
@@ -15,6 +15,7 @@ body {
 }
 
 .header {
+    margin-top: 1.5em;
     height: 6em;
     margin-bottom: 2em;
 }
@@ -24,7 +25,7 @@ body {
 }
 
 .title-text {
-    font-family: Garamond;
+    font-family: "Modern Antiqua", Garamond;
     font-size: 2em;
     font-weight: bolder;
 }
@@ -53,7 +54,7 @@ body {
 
 .weather-bg {
     text-align: center;
-    margin-top: 1em;
+    margin-top: 5em;
     margin-bottom: 1em;
 }
 
@@ -91,13 +92,15 @@ body {
     background-image: url("images/Plane_9_transparent_background.png");
     background-size: contain;
     background-repeat: no-repeat;
+    opacity: 0;
     animation: flyPlane 3s;
 }
 
 @keyframes flyPlane {
-    0%      {right:0;bottom:0;transform: scale(1,1);}
-    50%     {right:35vw;bottom:40vh;transform: scale(4,4);}
-    100%    {right:110vw;bottom:120vh;transform: scale(1,1);}
+    0%      {right:0;bottom:0;transform: scale(1,1);opacity: 1}
+    50%     {right:35vw;bottom:40vh;transform: scale(4,4);opacity: 1}
+    95%    {right:110vw;bottom:130vh;transform: scale(1,1);opacity: 0.7}
+    100%    {right:110vw;bottom:130vh;transform: scale(0,0);opacity: 0}
 }
 
 .wikipedia-section {
@@ -114,6 +117,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 
 .wikipedia-text {
@@ -121,7 +125,7 @@ body {
 }
 
 .wikipedia-text-bg {
-    background: url("./Images/postcard.jpg") no-repeat center;
+    background: url("./images/postcard.jpg") no-repeat center;
     background-size: cover;
 }
 
@@ -146,7 +150,14 @@ div#nomNomPics0, div#nomNomPics1, div#nomNomPics2, div#nomNomPics3 {
     .header-photo {
         display: none;
     }
-    .postcard {
-        display: none;
+
+    /*.postcard {*/
+        /*display: none;*/
+    /*}*/
+
+    .vol {
+        position: fixed;
+        top: 0;
+        right: 1em;
     }
 }
