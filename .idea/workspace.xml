@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="45cc2379-96cd-49df-9bcf-d58c721f4949" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/cities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Fireworks_transparent_background_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Fireworks_transparent_background_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Fireworks_transparent_background_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
@@ -35,8 +38,8 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1658">
-                  <caret line="107" column="17" lean-forward="true" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+                <state relative-caret-position="1819">
+                  <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
@@ -44,7 +47,7 @@
           <file leaf-file-name="weather.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/weather.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
+                <state relative-caret-position="510">
                   <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
@@ -56,7 +59,7 @@
           <file leaf-file-name="wikipedia.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/wikipedia.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
+                <state relative-caret-position="136">
                   <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
@@ -77,16 +80,16 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="75" column="16" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+                <state relative-caret-position="2227">
+                  <caret line="131" column="29" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cities.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cities.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cities.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="8823">
@@ -102,8 +105,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="57" column="50" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="50" />
+                <state relative-caret-position="522">
+                  <caret line="100" column="45" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
                 </state>
               </provider>
             </entry>
@@ -127,6 +130,7 @@
       <find>consol</find>
       <find>image</find>
       <find>imag</find>
+      <find>OldMapBackground</find>
     </findStrings>
     <replaceStrings>
       <replace>carouselFlickr</replace>
@@ -143,10 +147,10 @@
         <option value="$PROJECT_DIR$/style_2.css" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/wikipedia.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/main.js" />
-        <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/cities.js" />
+        <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -180,6 +184,11 @@
               <item name="c418_hackathon2" type="b2602c69:ProjectViewProjectNode" />
               <item name="c418_hackathon2" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="c418_hackathon2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c418_hackathon2" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -189,7 +198,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../L_Fuze/cohort/0_snackFinder/source/snackItOff" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -244,17 +253,19 @@
       <workItem from="1535599729746" duration="2769000" />
       <workItem from="1535643697027" duration="142000" />
       <workItem from="1535645440165" duration="2704000" />
+      <workItem from="1535778741378" duration="33000" />
+      <workItem from="1536208864042" duration="876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43505000" />
+    <option name="totallyTimeSpent" value="44573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1444563" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09434968" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -614,7 +625,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wikipedia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="136">
           <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -624,7 +635,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weather.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
+        <state relative-caret-position="510">
           <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -634,22 +645,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1658">
-          <caret line="107" column="17" lean-forward="true" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="57" column="50" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="75" column="16" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+        <state relative-caret-position="1819">
+          <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -657,6 +654,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8823">
           <caret line="519" column="7" selection-start-line="519" selection-start-column="7" selection-end-line="519" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2227">
+          <caret line="131" column="29" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="100" column="45" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
         </state>
       </provider>
     </entry>
