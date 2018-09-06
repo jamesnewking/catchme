@@ -127,13 +127,18 @@ body {
 }
 
 .wikipedia-text-bg {
-    background: url("./images/postcard.jpg") no-repeat center;
-    background-size: cover;
+    /*background: url("./images/postcard.jpg") no-repeat center;*/
+    /*background-size: cover;*/
+    background-color: #F8C471;
 }
 
 .modal-title {
     font-weight: bold;
-    color: white;
+    color: black;
+}
+
+.modal-body {
+    justify-content: center;
 }
 
 #modalContent{
@@ -144,7 +149,7 @@ div#nomNomPics0, div#nomNomPics1, div#nomNomPics2, div#nomNomPics3 {
     height: 30vh;
     background-size: contain;
     background-repeat: no-repeat;
-    /*background-image: url("images/Cup-Noodles.jpg"); */
+    background-position: center;
 }
 
 @media only screen and (max-width: 992px) {
