@@ -55,7 +55,7 @@ body {
 
 .weather-bg {
     text-align: center;
-    margin-top: 5em;
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 #theMap{
-    height: 114%;
+    height: 100%;
     width: 80%;
     border-radius: 10px;
     border: 2px solid darkgoldenrod;
@@ -150,6 +150,7 @@ div#nomNomPics0, div#nomNomPics1, div#nomNomPics2, div#nomNomPics3 {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    margin-bottom: 1em;
 }
 
 @media only screen and (max-width: 992px) {
