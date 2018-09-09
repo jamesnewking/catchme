@@ -2,7 +2,6 @@ body {
     margin: 0;
     background: url("./images/OldMapBackground.jpg") repeat center;
     background-size: cover;
-    height: 100vh;
     font-family: 'Gloria Hallelujah', cursive;
 }
 
