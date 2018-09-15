@@ -27,7 +27,10 @@ function makeRequestForWikipedia(winningCity) {
           var pageSummary = data.query.pages[pageID].extract;
           // console.log('pageSummary:', pageSummary)
           //$('.wikipedia-text').addClass('wikipedia-text-bg');
-          $('#winning_text').text(pageSummary);
+          cityInfo = pageSummary;
+          if(playAgain){
+              $('#winning_text').text(pageSummary);
+          }
         }
       });
     }
