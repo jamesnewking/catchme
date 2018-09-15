@@ -2,8 +2,12 @@
 $(document).ready(loadDocument);
 var winningCity;
 var muteVol = 1;
+var playAgain = 1;
+var foodPic = [];
+var cityInfo;
 
 function loadDocument(){
+
     $('.material-icons').on('click',function(){
         if($('.material-icons').text()==='volume_up'){
             $('.material-icons').text('volume_off');
@@ -15,7 +19,6 @@ function loadDocument(){
             }
     });
     var airplaneSound = new Audio('audio/airplane.mp3');
-
     airplaneSound.play();
 
 };
@@ -30,7 +33,6 @@ function fillUpPhotoArray(photoArray){
         photoArray.push('./images/airmail.png');
         fillUpPhotoArray(photoArray);
     }
-
 }
 
 function insertPicFromFlickr(photoArray){
@@ -67,7 +69,11 @@ function getFlickr(lon='-117.731803',lat='33.635682',searchText = 'food',forMap=
                     else {
                         let tempName = `url("${picURL}")`;
                         let divName = `#nomNomPics${index}`;
-                        $(divName).css("background-image", tempName); //don't use only 'background'
+                        foodPic.push(tempName);
+                        if(playAgain) {
+                            $(divName).css("background-image", tempName);
+
+                        }//don't use only 'background'
                 }
             }
             if (forMap){insertPicFromFlickr(photoArray);}
@@ -117,8 +123,19 @@ function initMap() {
         makeRequestForWikipedia(winningCity);
         let winShortMsg = `This is ${winningCity.city}, ${winningCity.country}.`;
         $('#winShortMsg').text(winShortMsg);
-        $('#winner').on('click',function(){location.reload()});
+        //$('#winner').on('click',function(){location.reload()});
+        $('#winner').on('click',function(){$('#winner').modal('hide');});
+        refreshModal(foodPic);
         $(".button-text").on("click", handleButtonClick);
+}
+
+function refreshModal(foodPic){
+    for (let i=0; i<4; i++){
+        let divName = `#nomNomPics${i}`;
+        $(divName).css("background-image", foodPic.shift());
+    };
+    $('#winning_text').text(cityInfo);
+
 }
 
 function sliceAndSplicedCities(capitalArray, splicedCount){
@@ -140,6 +157,14 @@ function sliceAndSplicedCities(capitalArray, splicedCount){
     return threeCitiesArray;
 }
 
+function refreshPage(){
+    $(".description-text").text("Here are a few photos from my travels, guess where I was...");
+    $(".button-text").addClass("btn-warning");
+    $(".button-text").removeClass("btn");
+    $(".button-text").removeClass("btn-success");
+
+}
+
 function handleButtonClick() {
     let answerTextArray = ["Nope", "Try again", "You don't know much do you?", "Either you don't know or the photographer don't know what he doing",
     "Take another stab at it", "Bruh...", "Nah but I want to go there", "I wish", "Did you fail 8th grade geography?",
@@ -150,14 +175,22 @@ function handleButtonClick() {
     let buttonTextVariable = $(this).text();
     let textSliceString = buttonTextVariable.slice(3);
     if (textSliceString === `${winningCity.city}, ${winningCity.country}`) {
+        playAgain = 0;
         $(".button-text").removeClass("btn-warning");
         $(".button-text").addClass("btn");
         $(this).addClass("btn-success");
         $(".button-text").off("click");
+        $(".button-text").off("mouseover");
         $(".description-text").text("Well Done!");
         $('#winner').modal('show');
         let sayCityCountry = `I was at ${winningCity.city} ${winningCity.country}`;
         responsiveVoice.speak(sayCityCountry, "UK English Female", {volume: muteVol}); //https://responsivevoice.org/
+        //refresh page
+        setTimeout(function(){
+            refreshPage();
+            initMap();
+        },500);
+
     }  else {
         $(this).removeClass("btn-warning");
         $(this).addClass("btn");
