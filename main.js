@@ -8,7 +8,7 @@ var cityInfo;
 
 function loadDocument(){
 
-    $('.material-icons').on('click',function(){
+    $('.vol').on('click',function(){
         if($('.material-icons').text()==='volume_up'){
             $('.material-icons').text('volume_off');
             muteVol = 0;
